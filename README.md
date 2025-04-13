@@ -44,21 +44,35 @@ The system uses three specialized agents:
 1. Clone the repository
 ```bash
 git clone https://github.com/yourusername/agentic-car-rentals
+cd agentic-car-rentals
 ```
 
-2. Install dependencies
+2. Set up Python virtual environment
+
+For Windows:
+```bash
+python -m venv venv
+.\venv\Scripts\activate
+```
+
+For macOS/Linux:
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+3. Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Set up environment variables in `.env`:
+4. Set up environment variables in `.env`:
 ```
 BROWSERBASE_API_KEY=your_key
-BROWSERBASE_PROJECT_ID= your_project_id
 GEMINI_API_KEY=your_key
 ```
 
-4. Run the application
+5. Run the application
 ```bash
 streamlit run app.py
 ```
@@ -74,9 +88,38 @@ result = process_rental_request(
 )
 ```
 
-## 📄 License
+## 💻 Development Setup
 
-MIT License
+### Prerequisites
+- Python 3.8 or higher
+- pip (Python package installer)
+- virtualenv or venv
+
+### Virtual Environment Management
+
+Activate the virtual environment:
+
+Windows:
+```bash
+.\venv\Scripts\activate
+```
+
+macOS/Linux:
+```bash
+source venv/bin/activate
+```
+
+Deactivate when done:
+```bash
+deactivate
+```
+
+### Installing New Dependencies
+```bash
+pip install package_name
+pip freeze > requirements.txt
+```
+
 
 ## 🙏 Acknowledgments
 
