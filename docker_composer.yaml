@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8501:8501"
+    environment:
+      - BROWSERBASE_API_KEY=${BROWSERBASE_API_KEY}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    volumes:
+      - .:/app
+    restart: unless-stopped
+    depends_on:
+      - mcp-service
+
+  mcp-service:
+    image: mcp/sqlite
+    volumes:
+      - mcp-data:/mcp
+    command: ["--db-path", "/mcp/test.db"]
+    restart: unless-stopped
+
+volumes:
+  mcp-data:
