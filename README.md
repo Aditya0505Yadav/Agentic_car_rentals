@@ -54,6 +54,7 @@ pip install -r requirements.txt
 3. Set up environment variables in `.env`:
 ```
 BROWSERBASE_API_KEY=your_key
+BROWSERBASE_PROJECT_ID= your_project_id
 GEMINI_API_KEY=your_key
 ```
 
